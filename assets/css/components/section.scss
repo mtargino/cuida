@@ -5,9 +5,7 @@ body {
     padding: 0;
 }
 .rainbow {
-    border-left: 6px solid;
-    border-image: $rainbow;
-    border-image-slice: 1;
+    border-left: 6px solid $dark-04;
 }
 .section {
     padding: 120px 8vw;
