@@ -1,0 +1,68 @@
+.list {
+    &--number {
+        &__item {
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: $dark-04;
+            text-align: center;
+            &:nth-child(even){
+                background: $dark-05;
+            }
+            &__text {
+                padding: 0 4vw;
+            }
+            &__number {
+                font-size: 27px;
+                color: $dark-01;
+                font-weight: 800;
+            }
+            .icon {
+                font-size: 23px;
+                color: $red;
+            }
+        }
+    }
+    &--icon {
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            box-shadow: $shadow-02;
+            border-radius: 4px;
+            margin: 0.6em 0;
+            padding: 10px 20px;
+            .icon {
+                font-size: 27px;
+                color: $green;
+            }
+            &__text {
+                font-size: 20px;
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) 
+{
+    .list {
+        &--number {
+            &__item {
+                padding: 10px 4vw;
+                font-size: 14px;
+            }
+        }
+        &--icon {
+            &__item {
+                &__text {
+                    font-size: 12px;
+                }
+            }
+            
+        }
+    }
+}

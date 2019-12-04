@@ -1,0 +1,114 @@
+.menu {
+    background: $dark-04;
+    padding: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    box-shadow: inset 3px 0px 20px $dark-03;
+    transition: 0.2s;
+    &--navigate {
+        padding: 0;
+        background: transparent;
+        position: fixed;
+        height: 72px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        &__button {
+            @extend .button;
+            border-radius: 0 72px 72px 0 !important;
+            background: rgba(255, 255, 255, 0.75) !important;
+            box-shadow: $shadow-menu !important;
+        }
+    }
+
+    &__list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 4vh 0;
+
+        &__item {
+            font-size: 21px;
+            width: fit-content;
+
+            &:nth-child(1) {
+                margin-bottom: 40%;
+            }
+
+            &__anchor {
+                @include unstyled-anchor;
+                display: flex;
+                align-items: center;
+
+                .icon {
+                    font-size: 1.25em;
+                    height: 60px;
+                    width: 60px;
+                    background: white;
+                    border-radius: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 20px;
+                    box-shadow: $shadow;
+                    transition: all 0.15s;
+                }
+
+                &__text {
+                    font-weight: 600;
+
+                    b {
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+    }
+
+    &--in {
+        right: 0;
+    }
+}
+
+.turn {
+    &-down {
+        transform: rotate(-45deg);
+        opacity: 0.5;
+    }
+
+    &-up {
+        transform: rotate(45deg);
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .menu {
+        height: calc(var(--vh, 1vh) * 100);
+        left: 100%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        &__list {
+            &__item {
+                font-size: 18px;
+
+                &__anchor {
+                    .icon {
+                        height: 42px;
+                        width: 42px;
+                    }
+                }
+            }
+        }
+
+        &--in {
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,239 @@
+.form {
+    &-control {
+        height: calc(1.5em + .75rem + 24px);
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid $dark-04;
+
+        &:focus {
+            color: $dark;
+            background-color: #fff;
+            border-color: $blue;
+            outline: 0;
+            box-shadow: 0 0 0 0.15rem rgba(15, 110, 199, 0.2);
+        }
+    }
+}
+
+.custom-select {
+    height: calc(1.5em + .75rem + 24px);
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid $dark-04;
+
+    &:focus {
+        color: $dark;
+        background-color: #fff;
+        border-color: $blue;
+        outline: 0;
+        box-shadow: 0 0 0 0.1rem rgba(15, 110, 199, 0.3);
+    }
+}
+
+label {
+    color: $dark;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-left: .5rem;
+    background: white;
+    padding: 2 5px;
+    margin-bottom: -0.5em;
+    margin-top: -0.5em;
+    position: absolute;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+textarea.form-control {
+    padding-top: 1.5em;
+    resize: vertical;
+    height: 11em;
+}
+
+.form-row>.col,
+.form-row>[class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding: 10px 5px;
+
+    &:focus-within {
+        label {
+            color: $blue;
+        }
+    }
+}
+
+.medium {
+    &::before {
+        cursor: pointer;
+        border-radius: 30px;
+        color: $dark-04;
+        background: $dark-04;
+        display: inline-block;
+        font-family: "Ionicons";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "";
+        font-size: 10px;
+        transition: 0.15s;
+        text-align: center;
+        line-height: 26px;
+        letter-spacing: 1.62px;
+        height: 30px;
+        width: 30px;
+        transform: rotate(-60deg);
+        box-shadow: inset 0px 0px 3px $dark-02;
+    }
+
+    &:checked {
+        &::before {
+            color: $dark;
+            border: 2px solid white;
+            font-size: 31px;
+            transform: rotate(0);
+        }
+
+        +.checkbox-label {
+            font-size: 14px;
+            color: $dark;
+            background: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 1em;
+            position: inherit;
+            letter-spacing: 0.25px;
+            transition: 0.15s;
+        }
+    }
+}
+
+hr {
+    @extend .breaker;
+}
+
+.needs-validation {
+    background: white;
+    padding: 8vw 6vw;
+    border-radius: 12px;
+    box-shadow: $shadow-menu;
+}
+
+h2 {
+    @extend .heading--4;
+}
+
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "";
+    display: none;
+}
+
+#file-upload-filename {
+    font-style: italic;
+    color: $dark-01;
+    font-size: 14px;
+    margin-top: 2em;
+}
+
+.custom-file {
+    position: unset;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    background: $dark-04;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-input {
+        position: absolute;
+        z-index: 2;
+        margin: 0;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+.custom-file-label {
+    @extend .button;
+    background: white;
+    border: none;
+    height: 60px;
+    box-shadow: $shadow-menu;
+    border-radius: 60px;
+    position: unset;
+    width: auto;
+
+    .icon {
+        color: $dark;
+    }
+}
+
+.checkbox {
+
+    &-card {
+        height: 72px;
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: space-evenly;
+    }
+
+    &-label {
+        cursor: pointer;
+        font-size: 14px;
+        color: $dark-01;
+        background: none;
+        padding: 0;
+        margin: 0;
+        padding-left: 1em;
+        position: inherit;
+        letter-spacing: 0.25px;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    #descricaocontribuicoes {
+        padding-top: 4em;
+        height: 15em;
+    }
+
+    #descricaopublicoalvo {
+        padding-top: 2em;
+        height: 13em;
+    }
+
+    #valorapoio {
+        height: calc(1.5em + .75rem + 35px);
+        padding-top: 1.25em;
+    }
+
+    .needs-validation {
+        margin-left: -6vw;
+        margin-right: -6vw;
+    }
+
+}

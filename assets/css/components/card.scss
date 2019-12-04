@@ -1,0 +1,88 @@
+.card {
+    border: 0;
+    background: white;
+    box-shadow: $shadow-02;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    &__title { 
+        font-weight: 600;
+        font-size: 20px;
+    }
+    &__desc { 
+        margin: 5px 0;
+        margin-bottom: 10px;
+    }
+    .icon {
+        font-size: 30px;
+        color: $green;
+    }
+    &__text {
+        margin: 30px 0;
+    }
+    &__money {
+        font-size: 27px;
+    }
+    &--form {
+        @extend .card;
+        box-shadow: none;
+        border: 1px solid $dark-04;
+    }
+}
+.comparison {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    &__text {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        padding: 0 0.5em;
+    }
+    .icon {
+        font-size: 30px;
+        color: $dark-02;
+    }
+}
+.modal {
+    padding-right: 0 !important;
+    &-dialog {
+        height: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-content {
+        border-radius: 6px;
+        border: 0;
+        box-shadow: $shadow-menu; 
+        margin: 0 15px;
+    }
+    &-header {
+        border-bottom: 1px solid $dark-04;
+    }
+    &-body {
+        padding: 6vh;
+        background: $dark-04;
+    }
+    &-footer {
+        border-top: 1px solid $dark-04;
+    }
+    .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: $breakpoint-sm) 
+{
+    .comparison {
+        margin: 30px 0;
+        &__text {
+            padding: 2em;
+            font-size: 14px;
+        }
+    }
+}

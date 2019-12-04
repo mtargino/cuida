@@ -1,0 +1,261 @@
+.button {
+    @include unstyled-anchor;
+    height: 72px;
+    color: $dark;
+    background: $dark-03;
+    font-size: 16px;
+    padding: 0 2em;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    transition: 0.5s;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+
+    &--medium {
+        @extend .button;
+        height: 42px;
+        font-size: 12px;
+
+        .icon {
+            color: $dark !important;
+        }
+    }
+
+    .icon {
+        font-size: 1.5em !important;
+        margin-right: 1em !important;
+    }
+
+    &:hover {
+        background: lighten($dark-03, 2%);
+    }
+
+    &:active {
+        background: darken($dark-03, 6%);
+    }
+
+    &:focus {
+        background: darken($dark-03, 6%);
+    }
+
+    &--purple {
+        @extend .button;
+        background: $purple;
+        color: white;
+        box-shadow: $shadow-01;
+
+        &:hover {
+            color: white;
+            background: lighten($purple, 6%);
+        }
+
+        &:active {
+            background: darken($purple, 6%);
+        }
+
+        &:focus {
+            background: darken($purple, 6%);
+        }
+
+        &:disabled {
+            @extend .button;
+        }
+    }
+
+    &--red {
+        @extend .button--purple;
+        background: $red;
+
+        &:hover {
+            color: white;
+            background: lighten($red, 6%);
+        }
+
+        &:active {
+            background: darken($red, 6%);
+        }
+
+        &:focus {
+            background: darken($red, 6%);
+        }
+
+        &:disabled {
+            @extend .button;
+        }
+    }
+
+    &--yellow {
+        @extend .button--purple;
+        background: $yellow;
+        color: $dark;
+
+        &:hover {
+            color: $dark;
+            background: lighten($yellow, 6%);
+        }
+
+        &:active {
+            background: darken($yellow, 6%);
+        }
+
+        &:focus {
+            background: darken($yellow, 6%);
+        }
+
+        &:disabled {
+            @extend .button;
+        }
+    }
+
+    &--green {
+        @extend .button--purple;
+        background: $green;
+        color: $dark;
+
+        &:hover {
+            color: $dark;
+            background: lighten($green, 6%);
+        }
+
+        &:active {
+            background: darken($green, 6%);
+        }
+
+        &:focus {
+            background: darken($green, 6%);
+        }
+
+        &:disabled {
+            @extend .button;
+        }
+    }
+}
+
+#preview,
+#send {
+    display: none;
+
+    &:disabled {
+        +label {
+            @extend .button;
+            box-shadow: none;
+            cursor: not-allowed;
+
+            &:hover {
+                background: $dark-03;
+            }
+
+            &:focus {
+                background: $dark-03;
+            }
+
+            &:active {
+                background: $dark-03;
+            }
+        }
+    }
+
+    &:focus {
+        +#preview-label {
+            background: darken($purple, 6%);
+        }
+
+        +#send-label {
+            background: darken($green, 6%);
+        }
+    }
+
+    &-label {
+        margin: 0;
+        position: inherit;
+        margin: 0 auto;
+    }
+}
+
+.please {
+    display: none;
+}
+
+@media (max-width: $breakpoint-sm) {
+    .please {
+        display: flex;
+        position: fixed;
+        right: 0;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.75);
+        border: 0;
+        border-radius: 60px 0px 0px 60px;
+        box-shadow: $shadow-menu;
+        align-items: center;
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+
+        .icon {
+            height: 60px;
+            width: 60px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+        }
+
+        &__grow {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: $dark;
+            width: 7em;
+            padding-right: 20px;
+        }
+    }
+
+    .button {
+        height: 60px;
+        font-size: 14px;
+    }
+
+    #preview,
+    #send {
+        &:disabled {
+            +label {
+                width: 100%;
+            } 
+        }
+
+        &-label {
+            width: 100%;
+        }
+    }
+}
